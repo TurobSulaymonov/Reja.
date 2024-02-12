@@ -1,4 +1,45 @@
-console.log("Jack Ma maslahatlari");
+console.log("B Task");
+
+function findNumber(raqam) {
+ 
+    let nomerQidirish = 0 
+    for(let i = 0; i < raqam.length; i++){
+        if(/\d/.test(raqam[i])) {
+            nomerQidirish ++
+        }
+    }
+       return nomerQidirish
+}
+
+
+
+let natija = findNumber("ad2a54y79wet0sfgb9");
+console.log(natija); 
+
+
+/* console.log("A Task");
+
+function salom (harf, raqam){
+    let count = 0;
+    
+    for (let i = 0; i < raqam.length; i++) {
+       if(raqam[i] === harf){
+        count++;
+        }
+    }
+
+    return count;
+}
+
+const result = salom("s","samarqand sayqali");
+console.log(result); */
+
+
+
+
+
+
+/* console.log("Jack Ma maslahatlari");
 const list = [
     "Yaxshi talaba bo'ling", // 0-20
     "tog'ri boshliq tanlang va koproq hato qiling", //20-30
@@ -25,7 +66,7 @@ function maslahatBering (a, callback) {
     callback(null, list[5]);
 }, 3000);
  */
-}
+/* }
 }
  console.log("passed here");
 maslahatBering(23, (err, data) => {
@@ -35,10 +76,10 @@ maslahatBering(23, (err, data) => {
 }
 });
 
-console.log("passed here");  
+console.log("passed here");   */
 
 //async
- async function maslahatBering (a) {
+/*  async function maslahatBering (a) {
     if( typeof a !== "number" ) throw new Error ("insert a number");
     else if (a <= 20 ) return list[0];
     else if (a > 20 && a <= 30) return list[1];
@@ -50,14 +91,14 @@ console.log("passed here");
     setTimeout(function () {
        resolve(list[5]);
     }, 6000);
-  }); 
+  });  */
     //return list[5];
 /* setTimeout(function () {
     callback(null, list[5]);
 }, 6000); */
 
-}
-}
+//}
+//}
 
 // then/catch
 /* console.log("passed hre 0");
@@ -72,7 +113,7 @@ console.log("passed hre 1");
  */
 
 // async//await
-async function run() {
+/* async function run() {
     let javob = await maslahatBering(20);
     console.log(javob);
     javob = await maslahatBering(31);
@@ -81,26 +122,10 @@ async function run() {
     console.log(javob);
 }
 
-run();
+run(); */
 
 
 
 
-console.log("A Task");
-
-function salom (harf, raqam){
-    let count = 0;
-    
-    for (let i = 0; i < raqam.length; i++) {
-       if(raqam[i] === harf){
-        count++;
-        }
-    }
-
-    return count;
-}
-
-const result = salom("s","samarqand sayqali");
-console.log(result);
 
 
