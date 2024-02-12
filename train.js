@@ -13,7 +13,7 @@ function findNumber(raqam) {
 
 
 
-let natija = findNumber("ad2a54y79wet0sfgb9");
+const natija = findNumber("ad2a54y79wet0sfgb9");
 console.log(natija); 
 
 
