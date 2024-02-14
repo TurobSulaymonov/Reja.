@@ -13,8 +13,8 @@ function findNumber(raqam) {
 
 
 
-const natija = findNumber("ad2a54y79wet0sfgb9");
-console.log(natija); 
+const result = findNumber("ad2a54y79wet0sfgb9");
+console.log(); 
 
 
 /* console.log("A Task");
@@ -125,7 +125,16 @@ console.log("passed hre 1");
 run(); */
 
 
-
+function soliutiom(my_string, k){
+    let str = '';
+    for( let i = 0; i < k; i++) {
+   
+        str += k;
+    }
+    return str
+}
+const re = soliutiom("jjj",3);
+console.log(re);
 
 
 

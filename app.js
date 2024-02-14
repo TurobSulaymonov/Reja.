@@ -16,6 +16,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 // MongoDB chaqirish
  const db = require("./server").db();
+ const mongodb = require("mongodb");
 
 // 1: Kirish code
 app.use(express.static("public"));
@@ -35,24 +36,54 @@ app.post("/create-items", (req, res) => {
       console.log('user entered /create-items');
       const new_reja = req.body.reja;
       db.collection("plans").insertOne({ reja: new_reja}, (err, data) => {
-        if(err) {
+         console.log(data.ops) 
+        res.json(data.ops[0]);  
+        
+        /*      if(err) {
             console.log(err);
             res.end("something went wrong");
          } else {
             res.end("successfully added");
-         }
+         } */
 
       });
   
 });
 
+    app.post("/delete-item", (req, res) => {
+          const id = req.body.id;
+         /*  console.log(id);
+          res.end("done"); */
+          db.collection("plans").deleteOne(
+            {_id: new mongoDB.ObjectId(id) },
+             function(err, data) {
+            res.json({state: "success"})
+          });
+    });
 
+    app.post("/edit-item", (req, res) => {
+        const data = req.body;
+        console.log(data);
+        db.collection("plans").findOneAndUpdate(
+            {_id: new mongodb.ObjectId(data._id)}, 
+            {$set: {reja: data.new_input}}, function(err, data){
+            res.json({state: "success"});
+
+        });
+        // res.end("done");
+    });
 
 /* app.get("/author", (req, res) => {
     res.render("author", { user: user });
 }); */
 
-
+app.post("/delete-all", (req, res) => {
+    if(req.body.delete_all) {
+        db.collection("plans").deleteMany(function () {
+            res.json({state: "Hamma rejalar ochirildi"});
+        });
+    }
+});
 
 app.get("/", function (req, res) {
     console.log('user entered /');
