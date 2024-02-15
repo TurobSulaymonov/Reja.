@@ -54,7 +54,7 @@ app.post("/create-items", (req, res) => {
     console.log("user entered /create-items");
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-        console.log(data.ops);
+        // console.log(data.ops);
         res.json(data.ops[0]);
     });
 });

@@ -1,4 +1,4 @@
-//
+ //
 
 console.log("ishga tushdi");
 
@@ -7,12 +7,12 @@ return `
 <li
 class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
 >
-<span class="item-text">${item._id}</span>
+<span class="item-text">${item.reja}</span>
 <div>
    <button data-id="${item._id}" class="edit-me btn-secondary btn-sm mr-1">
        Ozgarrtirish
    </button>
-   <button data-id="${item._id}" class="edit-me btn-secondary btn-sm mr-1">
+   <button data-id="${item._id}" class="delete-me btn btn-danger mr-1">
        Ochirish
    </button>
 </div>
@@ -57,15 +57,19 @@ document.addEventListener("click", function(e) {
             console.log("iltimos qaytadan urinib koring");
            })
          }
+        
     }
+
+
+
     // edit oper
-    if(e.target.classList.contains("edit-me")) {
-        // alert("siz edit tugmasini bosdiz");
-        let userInput = prompt(
+ if(e.target.classList.contains("edit-me")) {
+         alert("siz edit tugmasini bosdiz");
+         let userInput = prompt(
             "O'zgartirishni kiriting", 
-        e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
-         if(userInput) {
-            // console.log(userInput);
+         e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+          if(userInput) {
+             console.log(userInput);
             axios.post("/edit-item", {
                 id: e.target.getAttribute("data-id"),
                 new_input: userInput,
@@ -77,15 +81,15 @@ document.addEventListener("click", function(e) {
               
 
             }).catch(err => {
-                console.log("iltimos qaytadan urinib koring");
+              console.log("iltimos qaytadan urinib koring");
             });
         } 
-    }
+}
 });
-document.getElementById("clean-all").addEventListener("click", function () {
+ document.getElementById("clean-all").addEventListener("click", function () {
     axios.post("/delete-all", {delete_all: true}).then(respose => {
         alert(respose.data.state);
         document.location.reload();
     });
 
-});
+});  
