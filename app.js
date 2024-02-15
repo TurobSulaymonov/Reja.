@@ -30,13 +30,13 @@ app.set("view engine", "ejs");
 
 // 4: Routing code
 
-app.post("/create-items", (req, res) => {
+/* app.post("/create-items", (req, res) => {
       // TODO: code with db here
  
-      console.log('user entered /create-items');
+      console.log("user entered/create-items");
       const new_reja = req.body.reja;
       db.collection("plans").insertOne({ reja: new_reja}, (err, data) => {
-         console.log(data.ops) 
+         console.log(data.ops);
         res.json(data.ops[0]);  
         
         /*      if(err) {
@@ -46,16 +46,27 @@ app.post("/create-items", (req, res) => {
             res.end("successfully added");
          } */
 
-      });
+  //    });
   
+//}); 
+
+app.post("/create-items", (req, res) => {
+    console.log("user entered /create-items");
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+        console.log(data.ops);
+        res.json(data.ops[0]);
+    });
 });
+
+
 
     app.post("/delete-item", (req, res) => {
           const id = req.body.id;
          /*  console.log(id);
           res.end("done"); */
           db.collection("plans").deleteOne(
-            {_id: new mongoDB.ObjectId(id) },
+            {_id: new mongodb.ObjectId(id) },
              function(err, data) {
             res.json({state: "success"})
           });
