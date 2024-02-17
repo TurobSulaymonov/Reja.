@@ -10,7 +10,7 @@
 
 //define
 
- function soliution(harf, harf2) {
+/*  function soliution(harf, harf2) {
   
      const a = harf.split('').sort().join('');
        const b = harf2.split('').sort().join('');
@@ -21,8 +21,12 @@
   
   // call
   const natija = soliution("mitgroup", "gmtiprou");
-  console.log(natija);  
+  console.log(natija);   */
   
+
+
+
+
 
 
 
@@ -33,7 +37,7 @@
 
  
 
-;
+
 
 
 /* function solution ( my_string, n) {
