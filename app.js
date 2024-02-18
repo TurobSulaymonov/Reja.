@@ -1,6 +1,6 @@
 console.log("Web Serverni boshlash");
 const express = require("express");
-const res = require("express/Lib/response")
+// const res = require("express/Lib/response")
 const app = express();
 
 /* const fs = require("fs");
