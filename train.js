@@ -1,3 +1,38 @@
+
+// E task 
+// Shunday function tuzing, u bitta string argumentni qabul 
+// qilib osha stringni teskari qilib return qilsin.
+//MASALAN: getReverse("hello") return qilsin "olleh"
+function hey(harf) {
+    if (harf === "") 
+    return "";
+    else 
+    return hey(harf.substr(1)) + harf.charAt(0);
+  }
+  let harf = "salom";
+  const natija = hey(harf);
+  console.log(natija);
+
+/* function salom (harf) {
+  
+ 
+     let answer = harf.split("").reverse().join("");
+   
+ 
+     return answer
+ }
+ 
+ console.log(salom("dlrow olleh"));
+ */
+
+
+
+
+
+
+
+
+
 // D task
 
 // Shunday function tuzing, u 2ta string parametr ega bolsin, 
